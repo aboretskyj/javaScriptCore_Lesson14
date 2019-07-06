@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul> 
+
+        <li></li> 
+        
+        <li></li> 
+        
+    </ul> 
+        
+    <br>
+        
+    <ul> 
+        
+        <li></li> 
+        
+        <li></li>
+        
+        <li></li>
+        
+    </ul> 
+       
+    <br>
+        
+    <ul> 
+        
+        <li></li> 
+        
+    </ul> 
+
+    <button onclick="FillLis()">Fill the lis</button>
+
+    <script>
+        function FillLis(){
+            var uls = document.getElementsByTagName('ul');
+            var lisAmount = 0;
+
+            for (i = 0; i < uls.length; i++) {
+                var lis = uls[i].getElementsByTagName('li');
+                
+                lisAmount += lis.length;
+                for (j = 0; j < lis.length; j++){
+                    lis[j].innerHTML = prompt('Enter some text', "Some nonsense text");
+                }
+            }
+
+            var liInfo = document.createElement('h4');
+            liInfo.innerHTML = `the amount of lis = ${lisAmount}`;
+            document.body.appendChild(liInfo);
+        }
+    </script>
+
+</body>
+</html>
